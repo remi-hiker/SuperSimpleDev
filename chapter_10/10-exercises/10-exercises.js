@@ -3,8 +3,6 @@ const hasClass = button.classList.contains('js-button');
 
 console.log(hasClass);
 
-
-function checkIfToggled() {
     
     function toggleGamingButton() {
             const gamingButtonElement = document.querySelector('.js-gaming-button');
@@ -35,4 +33,3 @@ function checkIfToggled() {
                 techButtonElement.classList.add('is-toggled');
             }//This turns the button on if it is off
     }
-}

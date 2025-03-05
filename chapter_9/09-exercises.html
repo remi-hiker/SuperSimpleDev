@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Exercises</title>
+</head>
+<body>
+
+    <p>
+    
+    <button>9a</button>
+    
+    <button onclick =
+        "push9b();"
+        class="js-9b-button">9b
+    </button>
+    
+    </p>
+
+    <p>
+    
+    <button onclick="push('heads');" class="js-heads-button">heads</button>
+
+    <button onclick="push('tails');"class="js-tails-button">tails</button>
+    
+    </p>
+
+    <p class="js-move"></p>
+
+    <p>
+        <input placeholder="Name" class="js-name-input" onkeydown="
+        console.log(event.key);
+        submitNameKeyDown(event);
+        ">
+        
+        <button onclick="
+            submitName();
+        ">Submit</button>
+    </p>
+
+    <p class="js-greeting"></p>
+
+    <script>
+        console.log(document.querySelector('button'));
+
+        function push9b() {
+            const button9bElement = document.querySelector('.js-9b-button');
+            if(button9bElement.innerHTML === '9b') {
+                button9bElement.innerHTML = '9b done!';
+            } 
+            else {
+                button9bElement.innerHTML = '9b';
+            }
+        }
+
+        function push(move) {
+            
+            if (move === 'heads') {
+            document.querySelector('.js-move')
+                .innerHTML = `you Chose: Heads`;
+            }
+            else if ('tails') {
+            document.querySelector('.js-move')
+            .innerHTML = `you Chose: Tails`;
+            }
+
+        }
+
+        function submitName() {
+            const nameInput = document.querySelector('.js-name-input');
+            let nameGreeting = nameInput.value;
+
+            document.querySelector('.js-greeting')
+                .innerHTML = `Your name is ${nameGreeting}. It's great to meet you ${nameGreeting}`;
+        }
+
+        
+        function submitNameKeyDown(event) {
+            if(event.key === 'Enter') {
+            submitName();
+            }
+        }
+
+    </script>
+</body>
+</html>

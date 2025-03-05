@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let hour = 18
+        let name = 'Sam'
+        if (hour >= 6 && hour < 12) {
+            console.log(`Good Morning ${name}`);
+        } else if (hour >= 12 && hour < 18) {
+            console.log(`Good Afternoon ${name}`);
+        } else if (hour >= 18 && hour < 21) {
+            console.log(`Good Evening ${name}`);
+        } else if (hour>= 21) {
+            console.log(`Good Night ${name}`);
+        }
+
+        //New Exercise d - e
+
+        let age = 68
+        const ofAge = age <= 6 || age >= 65
+        const isHoliday = 1;
+        if (isHoliday && ofAge) {
+            console.log('Discount');
+        } else {
+            console.log('No Discount')
+        }
+
+        const randomNumber = Math.random();
+        let result = '';
+
+        //Heads and tails
+        
+        if (randomNumber < 0.5) {
+            result = 'heads';
+        } else {
+            result = 'tails';
+        }
+
+        const guess = 'heads'
+
+        if (result === guess) {
+            console.log('You Win.');
+        } else {
+            console.log('You Lose.')
+        }
+        
+        
+        //Heads and Tails with Ternary Operators
+
+        const randomnumber1 = Math.random();
+        
+        const result1 = randomnumber1 < 0.5 ? 'heads' : 'tails'
+        
+
+        const guess1 = 'heads';
+        const decision = guess1 === result1 ? 'You win' : 'you lose.'
+        console.log(decision)
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

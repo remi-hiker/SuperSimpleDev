@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Exercises</title>
+</head>
+<body>
+    <script>
+        
+        function greet(name) {
+            
+            if (name === undefined || name === '') {
+                console.log('Hi there')
+            }
+            
+            else {
+            console.log(`Hello ${name}`);
+            }
+        }
+        greet('')
+
+        function convertToFahrenheit(celsius) {
+            return ((celsius * 9/5) + 32);
+        }
+
+        function convertToCelsius(Fahrenheit) {
+            return ((Fahrenheit - 32) * 5/9);
+        }
+
+        console.log(convertToCelsius(40))
+        
+        function convertToTemperature(degrees, unit) {
+            if (unit === 'C') {
+                let tempInFahrenheit = convertToFahrenheit(degrees)
+                console.log(`${degrees}${unit} is ${tempInFahrenheit} in fahrenheit`)
+            }  
+
+            else if (unit === 'F') {
+                let tempInCelsius = convertToCelsius(degrees)
+                console.log(`${degrees}${unit} is ${tempInCelsius} in celsius`)
+            }
+        }
+        convertToTemperature(50,'F')
+
+        function kmToMiles(distance) {
+            return (distance * 1.6)
+        }
+
+        function MilesToKm(distance) {
+            return (distance / 1.6)
+        }
+
+
+        function ConvertLength(length, from, to) {
+            let kmInMiles = kmToMiles(length);
+            let milesInKm = MilesToKm(length);
+            if (from === 'km' && to === 'miles') {
+                console.log(`${length} in kilometres is ${kmInMiles} in miles`)
+            } else if (from === 'miles' && to === 'km') {
+                console.log(`${length} in miles is ${milesInKm} in kilometres`)
+            } else {
+                console.log(`${length} ${from} is already in ${to}`);
+            }
+        }
+
+        ConvertLength(50, 'miles', 'km')
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    #An object groups multiple values together
+    <script>
+        /*
+        const product = {
+            name: 'socks',
+            price: 1090 
+        };
+        console.log(product);
+        console.log(product.name);
+
+        product.name = 'cotton socks';
+        console.log(product);
+
+        product.newProperty = true;
+        console.log(product);
+
+        delete product.newProperty;
+        console.log(product);
+        */
+
+        /*
+        const product2 = {
+            name: 'shirt',
+            ['delivery-time']: '1-day',
+            //we can also put objects within objects; these are called nested objects
+            rating: {
+                stars: 4.5,
+                count: 87
+            },
+            //We can also put functions within objects
+            fun: function function1() {
+                console.log('function inside object');
+            }
+        };
+
+        console.log(product2)
+        console.log(product2.name);
+        console.log(product2['name']);
+        console.log(product2['delivery-time']);
+        //We have to use bracket notation especially when we have mathematical notation in the name of the item in the object that don't normally work with dot notation
+        console.log(product2.rating.count);
+        product2.fun();
+        
+        //log is a function within the console object.
+        //Therefore, console.log is a method 
+        //Math.random() is also a method
+        console.log(typeof console.log);
+        
+        //The below will convert the object into JSON
+        //JSON does not support functions
+        console.log(JSON.stringify(product2));
+        console.log(typeof JSON.stringify(product2));
+        
+        //The below will convert the JSON string into javascript
+        const jsonString = JSON.stringify(product2);
+        console.log(JSON.parse(jsonString));
+
+    */
+    
+    //Auto-boxing does not work with null or undefined. It would just throw an error.
+    console.log('hello'.length);
+    console.log('hello'.toUpperCase());
+
+    //Objects are references
+
+    const object1 = {
+        message: 'hello',
+    };
+
+    const object2 = object1;
+    //This is called copy by reference.
+
+    object1.message = 'Good Job!';
+    //We reassigned object1
+
+    console.log(object1);
+    console.log(object2);
+
+    const object3 = {
+        message: 'Good Job!',
+    };
+
+    console.log(object3 === object1);
+    //returns false. Objects are reference points. Since object3 and object1 do not reference the same point it returns "False".
+    console.log(object2 === object1);
+
+    const object4 = {
+        message: 'Good Job!',
+        price: 799,
+    };
+
+    //const message = object4.message;
+    const { message, price } = object4;
+    console.log(message);
+    console.log(price);
+    //The destructuring shortcut took the property out of the object and saved it in the messaging variable. 
+
+    const object5 = {
+        //message: message
+        message,
+        //Short hand property
+        // If message in this object is the same as in other objects we do not need  
+        //method: function function1() {
+        //    console.log('method');
+        //}
+
+        method() {
+            console.log('method');
+        }
+    };
+    console.log(object5);
+    object5.method();
+    </script>
+</body>
+</html>

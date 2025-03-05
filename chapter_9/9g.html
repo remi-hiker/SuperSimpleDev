@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9g</title>
+</head>
+<body>
+    <p>Amazon Shipping Calculator</p>
+    <input placeholder="Cost of order" class="js-cost-input" onkeydown="console.log(event.key);
+        handleCostKeyDown(event);
+    ">
+
+    <button onclick="
+        calculateTotal()
+    ">Calculate</button>
+
+    <p class="js-total-cost"></p>
+
+    <input placeholder="type" class="js-realtime-input" onkeyup="
+        realtimeInput();
+    ">
+
+    <p class="js-realtime-output"></p>
+
+    <script>
+        function handleCostKeyDown(event) {
+            if(event.key === 'Enter') {
+            calculateTotal();
+            }
+        }
+
+        function calculateTotal() {
+            const inputElement = document.querySelector('.js-cost-input');
+            let cost = parseFloat(inputElement.value);
+
+            if(cost < 40) {
+                cost += 10;
+            }
+
+            let roundedCost = Math.round(cost * 100) / 100;
+
+            document.querySelector('.js-total-cost')
+                .innerHTML = `$${roundedCost.toFixed(2)}`;
+        }
+
+        function realtimeInput() {
+            const realtimeElement = document.querySelector('.js-realtime-input');
+            let realtimeOutput = realtimeElement.value;
+
+            document.querySelector('.js-realtime-output')
+                .innerHTML = `${realtimeOutput}`
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+    
+    <button>hello</button>
+    <button">second button</button>
+
+    <script>
+        console.log(document.querySelector('button').innerHTML);
+        document.querySelector('button').innerHTML = 'changed'
+
+        const buttonElement = document.querySelector('.js-button');
+        console.log(buttonElement);
+
+        //DOM combines JavaScript and HTML together. It gives JS full control of the webpage.
+
+        /*
+       console.log(document.title);
+       document.title = 'Changed';
+       
+       console.log(document.body);
+       //We can have HTML elements inside JavaScript
+       console.log(typeof document.body);
+
+       console.log(document.body.innerHTML);
+       document.body.innerHTML = '<button>Good job</button>'
+    
+    
+
+       /*
+       
+       document.body.innerHTML = 'hello';
+        //Document is a built in object and then everything else is dot notation
+        document.title = 'Good job!';
+        */
+    </script>
+
+</body>
+</html>

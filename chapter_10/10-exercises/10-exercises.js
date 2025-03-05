@@ -1,19 +1,20 @@
 const button = document.querySelector('.js-button');
 const hasClass = button.classList.contains('js-button');
 
+
 console.log(hasClass);
 
-    
-    function toggleGamingButton() {
-            const gamingButtonElement = document.querySelector('.js-gaming-button');
-            if(gamingButtonElement.classList.contains('is-toggled')) {
-                gamingButtonElement.classList.remove('is-toggled');
-            }//This turns the button off if it is on
-            else {
-                gamingButtonElement.classList.add('is-toggled');
-            }//This turns the button on if it is off
-        }
+function toggleButton(selector) {
+    const ButtonElement = document.querySelector(selector);
+    if(ButtonElement.classList.contains('is-toggled')) {
+        ButtonElement.classList.remove('is-toggled');
+    }//This turns the button off if it is on
+    else {
+        ButtonElement.classList.add('is-toggled');
+    }//This turns the button on if it is off
+}
 
+/*
         function toggleMusicButton() {
             const musicButtonElement = document.querySelector('.js-music-button');
             if(musicButtonElement.classList.contains('is-toggled')) {
@@ -32,4 +33,4 @@ console.log(hasClass);
             else {
                 techButtonElement.classList.add('is-toggled');
             }//This turns the button on if it is off
-    }
+    }*/

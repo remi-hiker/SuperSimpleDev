@@ -6,31 +6,21 @@ console.log(hasClass);
 
 function toggleButton(selector) {
     const ButtonElement = document.querySelector(selector);
-    if(ButtonElement.classList.contains('is-toggled')) {
-        ButtonElement.classList.remove('is-toggled');
-    }//This turns the button off if it is on
-    else {
+    
+    if(!ButtonElement.classList.contains('is-toggled')) {
+        
+        turnOffPreviousButton();
+        
         ButtonElement.classList.add('is-toggled');
     }//This turns the button on if it is off
+    else {
+        ButtonElement.classList.remove('is-toggled');
+    }//This turns the button off if it is on
 }
 
-/*
-        function toggleMusicButton() {
-            const musicButtonElement = document.querySelector('.js-music-button');
-            if(musicButtonElement.classList.contains('is-toggled')) {
-                musicButtonElement.classList.remove('is-toggled');
-            }//This turns the button off if it is on
-            else {
-                musicButtonElement.classList.add('is-toggled');
-            }//This turns the button on if it is off
-        }
-
-        function toggleTechButton() {
-            const techButtonElement = document.querySelector('.js-tech-button');
-            if(techButtonElement.classList.contains('is-toggled')) {
-                techButtonElement.classList.remove('is-toggled');
-            }
-            else {
-                techButtonElement.classList.add('is-toggled');
-            }//This turns the button on if it is off
-    }*/
+function turnOffPreviousButton() {
+    const previousButton = document.querySelector('.is-toggled');
+    if (previousButton) {
+        previousButton.classList.remove('is-toggled');
+    }
+}

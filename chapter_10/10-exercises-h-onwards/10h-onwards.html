@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Shipping Calculator</title>
+    <link rel="stylesheet" href="10h-onwards.css">
+</head>
+<body>
+    
+    <p>Amazon Shipping Calculator</p>
+    <input placeholder="Cost of order" class="js-cost-input cost-input" onkeydown="console.log(event.key);
+        handleCostKeyDown(event);
+    ">
+    
+    <!--clicks and keydowns = events; onclick, onkeydown are event listeners that wait for an event to happen before running a js function.-->
+
+    <!--every event listener also gets an event object-->
+
+    <button onclick="
+        calculateTotal()
+    " class="calculate-button">Calculate</button>
+
+    <p class="js-total-cost"></p>
+
+    <script src="10h-onwards.js"></script>
+    
+</body>
+</html>

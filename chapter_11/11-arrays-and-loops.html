@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <script>
+        const myArray = [10, 20, 30];
+        console.log(myArray);
+
+        console.log(myArray[0]);
+        
+        myArray[3] = 99;
+        console.log(myArray);
+
+        myArray[0] = 25;
+        console.log(myArray);
+
+        //We can put any type of variable in an array
+
+        [1, 'hello', true, {name: 'socks'}, [1, 2, 3]]
+
+        console.log(typeof [1, 2]);
+        //An array is an object. It is just a specialtype of object
+
+        console.log(Array.isArray([1, 2]));
+
+        console.log(myArray.length);
+
+        myArray.push(100);
+        console.log(myArray);
+
+        myArray.splice(0, 1);
+        console.log(myArray);
+        //remove one value starting at index 0
+        
+    </script>
+</body>
+</html>

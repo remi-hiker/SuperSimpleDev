@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="10-calculator.css">
+</head>
+<body>
+
+    <p class="js-calculation"></p>
+
+    <p>
+        <button class="calcButton" onclick="
+            appendToCalculation('1');
+        ">1</button>
+
+        <button class="calcButton" onclick="
+            appendToCalculation('2');
+        ">2</button>
+        
+        <button class="calcButton" onclick="
+            appendToCalculation('3');
+        ">3</button>
+
+        <button class="calcButton" onclick="
+        appendToCalculation(' + ');
+        ">+</button>
+    </p>
+
+    <p>
+        
+        <button class="calcButton" onclick="
+            appendToCalculation('4');
+        ">4</button>
+        
+        <button class="calcButton" onclick="
+            appendToCalculation('5');
+        ">5</button>
+        
+        <button class="calcButton" onclick="
+            appendToCalculation('6')
+        ">6</button>
+
+        <button class="calcButton" onclick="
+        appendToCalculation(' - ');
+        "> - </button>
+    </p>
+
+    <p>
+        
+        <button class="calcButton" onclick="
+            appendToCalculation('7');
+        ">7</button>
+        
+        <button class="calcButton" onclick="
+            appendToCalculation('8');
+        ">8</button>
+        
+        <button class="calcButton" onclick="
+            appendToCalculation('9');
+        ">9</button>
+
+        <button class="calcButton" onclick="
+            appendToCalculation(' * ');
+        ">*</button>
+
+    </p>
+
+        <button class="calcButton" onclick="
+            appendToCalculation(' / ');
+        ">/</button>
+        
+        <button class="calcButton" onclick="
+        appendToCalculation('0');
+        ">0</button>
+        
+        <button class="calcButton" onclick="
+            findEquality();
+        ">=</button>
+
+        <button class="calcButton" onclick="
+            clearance();
+        ">clear</button>
+
+    <script>
+        let calculation = JSON.parse(localStorage.getItem('calculation')) || "";
+
+        function appendToCalculation(value) {
+            calculation += value;
+            document.querySelector('.js-calculation')
+                .innerHTML = `${calculation}`;
+
+            localStorage.setItem('calculation', JSON.stringify(calculation));
+        }
+        
+        function findEquality() {
+            calculation = eval(calculation);
+            document.querySelector('.js-calculation')
+                .innerHTML = `${calculation}`;
+        }
+
+        function clearance() {
+            calculation = calculation - calculation;
+            document.querySelector('.js-calculation')
+                .innerHTML = `${calculation}`;
+            localStorage.removeItem('calculation');
+        }
+
+    </script>
+</body>
+</html>
